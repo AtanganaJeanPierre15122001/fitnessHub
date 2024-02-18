@@ -308,6 +308,13 @@ ul, ol {
 	margin-top: 11px;
 	margin-bottom: 18px;
 }
+.hero-text h3 {
+	font-size: 72px;
+	color: #ffffff;
+	font-weight: 600;
+	margin-top: 11px;
+	margin-bottom: 18px;
+}
 .hero-text p {
 	color: #ffffff;
 	margin-bottom: 44px;
@@ -1803,6 +1810,9 @@ ul, ol {
 	.hero-text h1 {
 		font-size: 65px;
 	}
+	.hero-text h2 {
+		font-size: 65px;
+	}
 	.services-pic img {
 		height: auto;
 	}
@@ -1878,6 +1888,10 @@ ul, ol {
 @media only screen and (max-width: 479px) {
 	.hero-text h1 {
 		font-size: 42px;
+	}
+
+	.hero-text h3 {
+		font-size: 20px;
 	}
 	.single-trainer-item .trainer-text {
 		width: 284px;

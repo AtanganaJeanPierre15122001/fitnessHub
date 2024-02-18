@@ -22,5 +22,7 @@ Route::get('/', function () {
 });
 
 
+Route::get('/blog/abonement', 'App\Http\Controllers\BlogController@afficherAutrePage')->name('abonement');
+
 
 
