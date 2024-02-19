@@ -7,7 +7,7 @@
                 <div class="card">
                     <h3 class="card-header text-center">Login</h3>
                     <div class="card-body">
-                        <form method="POST" action="{{ route('login.custom') }}">
+                        <form method="GET" action="{{ route('dashboard') }}">
                             @csrf
                             <div class="form-group mb-3">
                                 <input type="text" placeholder="Email" id="email" class="form-control" name="email"
@@ -31,8 +31,10 @@
                                 </div>
                             </div>
                             <div class="d-grid mx-auto">
-                                <button type="submit" class="btn btn-dark btn-block">Signin</button>
+                                <button type="submit" class="btn btn-dark btn-block" onclick="window.location.href = '{{ route('dashboard') }}'">Signin</button>
+                                <a class="nav-link" href="{{ route('register') }}"><strong>register</strong></a>
                             </div>
+                            
                         </form>
                     </div>
                 </div>

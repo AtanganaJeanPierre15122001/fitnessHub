@@ -29,7 +29,7 @@
                         <li><a href="./contact.html">Contacts</a></li>
                     </ul>
                 </nav>
-                <a href="#" class="primary-btn signup-btn">Sign Up Today</a>
+                <a href="#" class="primary-btn signup-btn" onclick="register">Sign Up Today</a>
             </div>
             <div id="mobile-menu-wrap"></div>
         </div>
