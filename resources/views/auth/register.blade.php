@@ -1,65 +1,60 @@
-@extends('auth.layouts')
+@extends('layouts.app')
 @section('content')
-<main class="signup-form">
-    <div class="container">
-        <div class="row justify-content-center">
-            <div class="col-md-4">
-                <div class="card">
-                    <h3 class="card-header text-center">Register User</h3>
-                    <div class="card-body">
-                        <form action="{{ route('login') }}" method="GET">
-                            @csrf
-                            <div class="form-group mb-3">
-                                <input type="text" placeholder="Name" id="name" class="form-control" name="name"
-                                    required autofocus>
-                                @if ($errors->has('name'))
-                                <span class="text-danger">{{ $errors->first('name') }}</span>
-                                @endif
-                            </div>
-                            <div class="form-group mb-3">
-                                <input type="text" placeholder="Email" id="email_address" class="form-control"
-                                    name="email" required autofocus>
-                                @if ($errors->has('email'))
-                                <span class="text-danger">{{ $errors->first('email') }}</span>
-                                @endif
-                            </div>
-                            <div class="form-group mb-3">
-                                <input type="password" placeholder="Password" id="password" class="form-control"
-                                    name="password" required>
-                                @if ($errors->has('password'))
-                                <span class="text-danger">{{ $errors->first('password') }}</span>
-                                
-                                @endif
-                            </div>
-                            <div class="form-group mb-3">
-                                <select id="role" class="form-control" name="role" required>
-                                    <option value="">Select Role</option>
-                                    <option value="admin">Admin</option>
-                                    <option value="client">Client</option>
-                                    <option value="coach">Coach</option>
-                                </select>
-                                @if ($errors->has('role'))
-                                    <span class="text-danger">{{ $errors->first('role') }}</span>
-                                @endif
-                            </div>
-                            
-                            <div class="form-group mb-3">
-                                <div class="checkbox">
-                                    <label><input type="checkbox" name="remember"> Remember Me</label>
+    <section  style="background-image: url('https://t3.ftcdn.net/jpg/02/24/31/68/240_F_224316855_ZIENS9D1LpzoIaGXMwUAAkqff9MeEZEe.jpg'); background-repeat: no-repeat; background-size: cover; background-position: center center;" class="register-section spad">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12">
+                    <div class="register-text bg-light">
+                        <div class="section-title">
+                            <h2>Register Now</h2>
+                            <p>The First 7 Day Trial Is Completely Free With The Teacher</p>
+                        </div>
+                        <form action="#" class="register-form ">
+                            <div class="row">
+                                <div class="col-lg-6">
+                                    <label for="name">First Name</label>
+                                    <input type="text" id="name">
                                 </div>
+                                <div class="col-lg-6">
+                                    <label for="email">Your email address</label>
+                                    <input type="text" id="email">
+                                </div>
+                                <div class="col-lg-6">
+                                    <label for="last-name">Last Name</label>
+                                    <input type="text" id="last-name">
+                                </div>
+                                <div class="col-lg-6">
+                                    <label for="mobile">Mobile No*</label>
+                                    <input type="text" id="mobile">
+                                </div>
+                                <div class="col-lg-6">
+                                    <label for="password">Password</label>
+                                    <input type="password" id="mobile">
+                                </div>
+                                <div class="form-group col-lg-6">
+                                    <label for="last-name">Role</label>
+                                    <select id="role" class="form-control" name="role" required>
+                                        <option value="admin">Admin</option>
+                                        <option value="client">Client</option>
+                                        <option value="coach">Coach</option>
+                                    </select>
+                                    @if ($errors->has('role'))
+                                        <span class="text-danger">{{ $errors->first('role') }}</span>
+                                    @endif
+                                </div>
+                                
                             </div>
-                            <div class="d-grid mx-auto">
-                                <button type="submit" class="btn btn-dark btn-block">Sign up</button>
-                            </div>
-                        
-                            <div>
-                             <a  class="nav-link" href="{{ route('login') }}"><strong>Login</strong></a>
-                            </div>
+                            <button type="submit" class="register-btn">SignUp</button>
                         </form>
                     </div>
                 </div>
+                {{-- <div class="col-lg-4">
+                    <div class="register-pic">
+                        <img src="assets/img/register-pic.jpg" alt="">
+                    </div> --}}
+                </div>
             </div>
         </div>
-    </div>
-</main>
+    </section>
+
 @endsection

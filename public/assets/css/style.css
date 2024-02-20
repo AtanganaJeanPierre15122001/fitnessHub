@@ -72,6 +72,7 @@ p {
 }
 img {
 	max-width: 100%;
+	
 }
 input:focus, select:focus, button:focus, textarea:focus {
 	outline: none;
@@ -102,8 +103,21 @@ ul, ol {
 .set-bg {
 	background-repeat: no-repeat;
 	background-size: cover;
-	background-position: top center;
+	background-position: center center;
+
+
 }
+#bg-video {
+	position: fixed;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	object-fit: cover;
+	z-index: -1; /* Ensures the video is behind other content */
+  }
+  
+  
 .spad {
 	padding-top: 100px;
 	padding-bottom: 100px;
