@@ -14,6 +14,7 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', [\App\Http\Controllers\AcceuilController::class, 'welcome'])->name('welcome');
+Route::post('/', [\App\Http\Controllers\AuthController::class, 'signup']);
 Route::get('/about',[\App\Http\Controllers\AcceuilController::class , 'about'])->name('acceuil.about');
 Route::get('/classes',[\App\Http\Controllers\AcceuilController::class , 'classes'])->name('acceuil.classes');
 Route::get('/contact',[\App\Http\Controllers\AcceuilController::class , 'contact'])->name('acceuil.contact');
@@ -32,6 +33,10 @@ Route::post('/adminAbonnement',[\App\Http\Controllers\AdminController::class , '
 
 Route::get('/adminClient',[\App\Http\Controllers\AdminController::class , 'adminClient'])->name('admin.viewAdminClient');
 Route::get('/adminEquip',[\App\Http\Controllers\AdminController::class , 'equipement'])->name('admin.viewEquipement');
+
+Route::get('/client',[\App\Http\Controllers\AdminController::class , 'client'])->name('client.viewClient');
+Route::get('/coach',[\App\Http\Controllers\AdminController::class , 'coach'])->name('coach.viewCoach');
+
 
 
 

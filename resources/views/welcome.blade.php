@@ -227,40 +227,7 @@
                     </div>
                 </div>
                 @endforeach
-{{--                <div class="col-lg-4 col-md-6">--}}
-{{--                    <div class="single-trainer-item">--}}
-{{--                        <img src="assets/img/trainer/trainer-2.jpg" alt="">--}}
-{{--                        <div class="trainer-text">--}}
-{{--                            <h5>Gregory Powers</h5>--}}
-{{--                            <span>Gym coach</span>--}}
-{{--                            <p>non numquam eius modi tempora incidunt ut labore et dolore magnam aliquam quaerat--}}
-{{--                                voluptatem.</p>--}}
-{{--                            <div class="trainer-social">--}}
-{{--                                <a href="#"><i class="fa fa-facebook"></i></a>--}}
-{{--                                <a href="#"><i class="fa fa-instagram"></i></a>--}}
-{{--                                <a href="#"><i class="fa fa-twitter"></i></a>--}}
-{{--                                <a href="#"><i class="fa fa-pinterest"></i></a>--}}
-{{--                            </div>--}}
-{{--                        </div>--}}
-{{--                    </div>--}}
-{{--                </div>--}}
-{{--                <div class="col-lg-4 col-md-6">--}}
-{{--                    <div class="single-trainer-item">--}}
-{{--                        <img src="assets/img/trainer/trainer-3.jpg" alt="">--}}
-{{--                        <div class="trainer-text">--}}
-{{--                            <h5>Walter Wagner</h5>--}}
-{{--                            <span>Dance trainer</span>--}}
-{{--                            <p>non numquam eius modi tempora incidunt ut labore et dolore magnam aliquam quaerat--}}
-{{--                                voluptatem.</p>--}}
-{{--                            <div class="trainer-social">--}}
-{{--                                <a href="#"><i class="fa fa-facebook"></i></a>--}}
-{{--                                <a href="#"><i class="fa fa-instagram"></i></a>--}}
-{{--                                <a href="#"><i class="fa fa-twitter"></i></a>--}}
-{{--                                <a href="#"><i class="fa fa-pinterest"></i></a>--}}
-{{--                            </div>--}}
-{{--                        </div>--}}
-{{--                    </div>--}}
-{{--                </div>--}}
+
             </div>
         </div>
     </section>
@@ -280,21 +247,22 @@
                 </div>
             </div>
             <div class="row">
+                @foreach($abonnements as $key => $abonnement)
                 <div class="col-lg-4">
                     <div class="membership-item">
                         <div class="mi-title">
-                            <h4>Basic</h4>
+                            <h4>{{$abonnement->nom_abonnement}}</h4>
                             <div class="triangle"></div>
                         </div>
-                        <h2 class="mi-price">$17<span>/01 mo</span></h2>
+                        <h2 class="mi-price">{{$abonnement->prix}}<span>/01 mo</span></h2>
                         <ul>
                             <li>
                                 <p>Duration</p>
-                                <span>12 months</span>
+                                <span>{{$abonnement->durée}}</span>
                             </li>
                             <li>
-                                <p>Personal trainer</p>
-                                <span>00 person</span>
+                                <p>Description</p>
+                                <span>{{$abonnement->description}}</span>
                             </li>
                             <li>
                                 <p>Amount of people</p>
@@ -305,72 +273,16 @@
                                 <span>Unlimited</span>
                             </li>
                         </ul>
-                        <a href="#" class="primary-btn membership-btn">Start Now</a>
+                        <a href="#register" class="primary-btn membership-btn">Start Now</a>
                     </div>
                 </div>
-                <div class="col-lg-4">
-                    <div class="membership-item">
-                        <div class="mi-title">
-                            <h4>Standard</h4>
-                            <div class="triangle"></div>
-                        </div>
-                        <h2 class="mi-price">$57<span>/01 mo</span></h2>
-                        <ul>
-                            <li>
-                                <p>Duration</p>
-                                <span>12 months</span>
-                            </li>
-                            <li>
-                                <p>Personal trainer</p>
-                                <span>01 person</span>
-                            </li>
-                            <li>
-                                <p>Amount of people</p>
-                                <span>01 person</span>
-                            </li>
-                            <li>
-                                <p>Number of visits</p>
-                                <span>Unlimited</span>
-                            </li>
-                        </ul>
-                        <a href="#" class="primary-btn membership-btn">Start Now</a>
-                    </div>
-                </div>
-                <div class="col-lg-4">
-                    <div class="membership-item">
-                        <div class="mi-title">
-                            <h4>Premium</h4>
-                            <div class="triangle"></div>
-                        </div>
-                        <h2 class="mi-price">$98<span>/01 mo</span></h2>
-                        <ul>
-                            <li>
-                                <p>Duration</p>
-                                <span>12 months</span>
-                            </li>
-                            <li>
-                                <p>Personal trainer</p>
-                                <span>01 person</span>
-                            </li>
-                            <li>
-                                <p>Amount of people</p>
-                                <span>01 person</span>
-                            </li>
-                            <li>
-                                <p>Number of visits</p>
-                                <span>Unlimited</span>
-                            </li>
-                        </ul>
-                        <a href="#" class="primary-btn membership-btn">Start Now</a>
-                    </div>
-                </div>
-            </div>
-        </div>
+                @endforeach
+
     </section>
     <!-- Membership Section End -->
 
     <!-- Register Section Begin -->
-    <section class="register-section spad">
+    <section id="register" class="register-section spad">
         <div class="container">
             <div class="row">
                 <div class="col-lg-8">
@@ -379,24 +291,62 @@
                             <h2>Register Now</h2>
                             <p>The First 7 Day Trial Is Completely Free With The Teacher</p>
                         </div>
-                        <form action="#" class="register-form">
+                        <form action="{{route('welcome')}}" class="register-form">
+                            @csrf
                             <div class="row">
                                 <div class="col-lg-6">
                                     <label for="name">First Name</label>
-                                    <input type="text" id="name">
+                                    <input type="text" id="name" name="name">
                                 </div>
                                 <div class="col-lg-6">
                                     <label for="email">Your email address</label>
-                                    <input type="text" id="email">
+                                    <input type="text" id="email" name="email">
                                 </div>
                                 <div class="col-lg-6">
                                     <label for="last-name">Last Name</label>
-                                    <input type="text" id="last-name">
+                                    <input type="text" id="lastname" name="lastname">
                                 </div>
                                 <div class="col-lg-6">
-                                    <label for="mobile">Mobile No*</label>
-                                    <input type="text" id="mobile">
+                                    <label for="last-name">Abonnement</label>
+                                    <select name="abon" class="form-control">
+                                        @foreach($abonnements as $key => $abonnement )
+                                            <option value="{{$abonnement->nom_abonnement}}">
+                                                {{$abonnement->nom_abonnement}}
+                                            </option>
+                                        @endforeach
+                                    </select>
                                 </div>
+                                <div class="col-lg-12">
+                                    <label for="mobile">Fonction</label>
+                                    <select name="fonction" class="form-control">
+                                        <option value="cli"> client</option>
+                                        <option value="coa"> coach</option>
+
+                                    </select>
+                                </div>
+                                <div class="col-lg-6">
+                                    <label for="last-name">Age</label>
+                                    <input type="text" id="lastname" name="age">
+                                </div>
+                                <div class="col-lg-6">
+                                    <label for="last-name">Sexe</label>
+                                    <input type="text" id="lastname" name="sexe">
+                                </div>
+                                <div class="col-lg-6">
+                                    <label for="last-name">Adresse</label>
+                                    <input type="text" id="lastname" name="adresse">
+                                </div>
+
+
+                                <div class="col-lg-6">
+                                    <label for="mobile">Password</label>
+                                    <input type="password" id="mobile" name="pwd">
+                                </div>
+                                <div class="col-lg-6">
+                                    <label for="mobile">Password confirm</label>
+                                    <input type="password" id="mobile" name="pwdconf">
+                                </div>
+
                             </div>
                             <button type="submit" class="register-btn">Get Started</button>
                         </form>

@@ -113,4 +113,15 @@ class AdminController extends Controller
 
 
     }
+
+
+    public function client(){
+
+        return to_route('client.viewClient')->with('success',' Enregistrement reuissi');
+    }
+
+    public function coach(){
+
+        return to_route('coach.viewCoach')->with('success',' Enregistrement reuissi');
+    }
 }
