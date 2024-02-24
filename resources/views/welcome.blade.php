@@ -14,19 +14,15 @@
     <header class="header-section">
         <div class="container">
             <div class="logo">
-                <a href="./index.html">
-                    <img src="assets/img/logo.png" alt="">
-                </a>
+               <div style="font-size: 2em; color: white; display: flex; margin-top: 0.3em">fitness<div style="color: #f15d44;">Hub</div></div>
             </div>
             <div class="nav-menu">
                 <nav class="mainmenu mobile-menu">
                     <ul>
-                        <li class="active"><a href="./index.html">Home</a></li>
-                        <li><a href="./about-us.html">About</a></li>
-                        <li><a href="./classes.html">Classes</a></li>
-                        <li><a href="./blog.html">Blog</a></li>
-                        <li><a href="./gallery.html">Gallery</a></li>
-                        <li><a href="./contact.html">Contacts</a></li>
+                        <li class="active"><a href="{{route('welcome')}}">Home</a></li>
+                        <li><a href="{{ route('acceuil.about') }}">About</a></li>
+                        <li><a href="{{ route('acceuil.classes') }}">Classes</a></li>
+                        <li><a href="{{ route('acceuil.contact') }}">Contacts</a></li>
                     </ul>
                 </nav>
                 <a href="#" class="primary-btn signup-btn">Sign Up Today</a>
@@ -43,8 +39,8 @@
                 <div class="col-lg-8">
                     <div class="hero-text">
                         <span>FITNESS ELEMENTS</span>
-                        <h1>BMI CALCULATOR</h1>
-                        <p>Gutim comes packed with the user-friendly BMI Calculator<br /> shortcode which lets</p>
+                        <h1>Bienvenue sur FITNESSHUB</h1>
+                        <p>Une salle de sport avec de nombreuses <br /> FONCTIONNALITE</p>
                         <a href="#" class="primary-btn">Read More</a>
                     </div>
                 </div>
@@ -213,14 +209,14 @@
                 </div>
             </div>
             <div class="row">
+                @foreach($coaches as $key => $coache)
                 <div class="col-lg-4 col-md-6">
                     <div class="single-trainer-item">
                         <img src="assets/img/trainer/trainer-1.jpg" alt="">
                         <div class="trainer-text">
-                            <h5>Patrick Cortez</h5>
-                            <span>Leader</span>
-                            <p>non numquam eius modi tempora incidunt ut labore et dolore magnam aliquam quaerat
-                                voluptatem.</p>
+                            <h5>{{$coache->nom}}</h5>
+                            <span>{{$coache->prenom}}</span>
+                            <p>{{$coache->age}}</p>
                             <div class="trainer-social">
                                 <a href="#"><i class="fa fa-facebook"></i></a>
                                 <a href="#"><i class="fa fa-instagram"></i></a>
@@ -230,114 +226,15 @@
                         </div>
                     </div>
                 </div>
-                <div class="col-lg-4 col-md-6">
-                    <div class="single-trainer-item">
-                        <img src="assets/img/trainer/trainer-2.jpg" alt="">
-                        <div class="trainer-text">
-                            <h5>Gregory Powers</h5>
-                            <span>Gym coach</span>
-                            <p>non numquam eius modi tempora incidunt ut labore et dolore magnam aliquam quaerat
-                                voluptatem.</p>
-                            <div class="trainer-social">
-                                <a href="#"><i class="fa fa-facebook"></i></a>
-                                <a href="#"><i class="fa fa-instagram"></i></a>
-                                <a href="#"><i class="fa fa-twitter"></i></a>
-                                <a href="#"><i class="fa fa-pinterest"></i></a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-4 col-md-6">
-                    <div class="single-trainer-item">
-                        <img src="assets/img/trainer/trainer-3.jpg" alt="">
-                        <div class="trainer-text">
-                            <h5>Walter Wagner</h5>
-                            <span>Dance trainer</span>
-                            <p>non numquam eius modi tempora incidunt ut labore et dolore magnam aliquam quaerat
-                                voluptatem.</p>
-                            <div class="trainer-social">
-                                <a href="#"><i class="fa fa-facebook"></i></a>
-                                <a href="#"><i class="fa fa-instagram"></i></a>
-                                <a href="#"><i class="fa fa-twitter"></i></a>
-                                <a href="#"><i class="fa fa-pinterest"></i></a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
+                @endforeach
+
             </div>
         </div>
     </section>
     <!-- Trainer Section End -->
 
-    <!-- Testimonial Section Begin -->
-    <section class="testimonial-section spad">
-        <div class="container">
-            <div class="row">
-                <div class="col-lg-12">
-                    <div class="section-title">
-                        <h2>success stories</h2>
-                    </div>
-                </div>
-            </div>
-            <div class="row">
-                <div class="col-lg-10 offset-lg-1">
-                    <div class="testimonial-slider owl-carousel">
-                        <div class="testimonial-item">
-                            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor
-                                incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud
-                                exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. </p>
-                            <div class="ti-pic">
-                                <img src="assets/img/testimonial/testimonial-1.jpg" alt="">
-                                <div class="quote">
-                                    <img src="assets/img/testimonial/quote-left.png" alt="">
-                                </div>
-                            </div>
-                            <div class="ti-author">
-                                <h4>Patrick Cortez</h4>
-                                <span>Leader</span>
-                            </div>
-                        </div>
-                        <div class="testimonial-item">
-                            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor
-                                incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud
-                                exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. </p>
-                            <div class="ti-pic">
-                                <img src="assets/img/testimonial/testimonial-1.jpg" alt="">
-                                <div class="quote">
-                                    <img src="assets/img/testimonial/quote-left.png" alt="">
-                                </div>
-                            </div>
-                            <div class="ti-author">
-                                <h4>Patrick Cortez</h4>
-                                <span>Leader</span>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-    <!-- Testimonial Section End -->
 
-    <!-- Banner Section Begin -->
-    <section class="banner-section set-bg" data-setbg="img/banner-bg.jpg">
-        <div class="container">
-            <div class="row">
-                <div class="col-lg-6">
-                    <div class="banner-text">
-                        <h2>Get training today</h2>
-                        <p>Gimply dummy text of the printing and typesetting industry. Lorem Ipsum has been the
-                            industry’s standard.</p>
-                        <a href="#" class="primary-btn banner-btn">Contact Now</a>
-                    </div>
-                </div>
-                <div class="col-lg-5">
-                    <img src="assets/img/banner-person.png" alt="">
-                </div>
-            </div>
-        </div>
-    </section>
-    <!-- Banner Section End -->
+
 
     <!-- Membership Section Begin -->
     <section class="membership-section spad">
@@ -350,21 +247,22 @@
                 </div>
             </div>
             <div class="row">
+                @foreach($abonnements as $key => $abonnement)
                 <div class="col-lg-4">
                     <div class="membership-item">
                         <div class="mi-title">
-                            <h4>Basic</h4>
+                            <h4>{{$abonnement->nom_abonnement}}</h4>
                             <div class="triangle"></div>
                         </div>
-                        <h2 class="mi-price">$17<span>/01 mo</span></h2>
+                        <h2 class="mi-price">{{$abonnement->prix}}<span>/01 mo</span></h2>
                         <ul>
                             <li>
                                 <p>Duration</p>
-                                <span>12 months</span>
+                                <span>{{$abonnement->durée}}</span>
                             </li>
                             <li>
-                                <p>Personal trainer</p>
-                                <span>00 person</span>
+                                <p>Description</p>
+                                <span>{{$abonnement->description}}</span>
                             </li>
                             <li>
                                 <p>Amount of people</p>
@@ -375,72 +273,16 @@
                                 <span>Unlimited</span>
                             </li>
                         </ul>
-                        <a href="#" class="primary-btn membership-btn">Start Now</a>
+                        <a href="#register" class="primary-btn membership-btn">Start Now</a>
                     </div>
                 </div>
-                <div class="col-lg-4">
-                    <div class="membership-item">
-                        <div class="mi-title">
-                            <h4>Standard</h4>
-                            <div class="triangle"></div>
-                        </div>
-                        <h2 class="mi-price">$57<span>/01 mo</span></h2>
-                        <ul>
-                            <li>
-                                <p>Duration</p>
-                                <span>12 months</span>
-                            </li>
-                            <li>
-                                <p>Personal trainer</p>
-                                <span>01 person</span>
-                            </li>
-                            <li>
-                                <p>Amount of people</p>
-                                <span>01 person</span>
-                            </li>
-                            <li>
-                                <p>Number of visits</p>
-                                <span>Unlimited</span>
-                            </li>
-                        </ul>
-                        <a href="#" class="primary-btn membership-btn">Start Now</a>
-                    </div>
-                </div>
-                <div class="col-lg-4">
-                    <div class="membership-item">
-                        <div class="mi-title">
-                            <h4>Premium</h4>
-                            <div class="triangle"></div>
-                        </div>
-                        <h2 class="mi-price">$98<span>/01 mo</span></h2>
-                        <ul>
-                            <li>
-                                <p>Duration</p>
-                                <span>12 months</span>
-                            </li>
-                            <li>
-                                <p>Personal trainer</p>
-                                <span>01 person</span>
-                            </li>
-                            <li>
-                                <p>Amount of people</p>
-                                <span>01 person</span>
-                            </li>
-                            <li>
-                                <p>Number of visits</p>
-                                <span>Unlimited</span>
-                            </li>
-                        </ul>
-                        <a href="#" class="primary-btn membership-btn">Start Now</a>
-                    </div>
-                </div>
-            </div>
-        </div>
+                @endforeach
+
     </section>
     <!-- Membership Section End -->
 
     <!-- Register Section Begin -->
-    <section class="register-section spad">
+    <section id="register" class="register-section spad">
         <div class="container">
             <div class="row">
                 <div class="col-lg-8">
@@ -449,24 +291,62 @@
                             <h2>Register Now</h2>
                             <p>The First 7 Day Trial Is Completely Free With The Teacher</p>
                         </div>
-                        <form action="#" class="register-form">
+                        <form action="{{route('welcome')}}" class="register-form">
+                            @csrf
                             <div class="row">
                                 <div class="col-lg-6">
                                     <label for="name">First Name</label>
-                                    <input type="text" id="name">
+                                    <input type="text" id="name" name="name">
                                 </div>
                                 <div class="col-lg-6">
                                     <label for="email">Your email address</label>
-                                    <input type="text" id="email">
+                                    <input type="text" id="email" name="email">
                                 </div>
                                 <div class="col-lg-6">
                                     <label for="last-name">Last Name</label>
-                                    <input type="text" id="last-name">
+                                    <input type="text" id="lastname" name="lastname">
                                 </div>
                                 <div class="col-lg-6">
-                                    <label for="mobile">Mobile No*</label>
-                                    <input type="text" id="mobile">
+                                    <label for="last-name">Abonnement</label>
+                                    <select name="abon" class="form-control">
+                                        @foreach($abonnements as $key => $abonnement )
+                                            <option value="{{$abonnement->nom_abonnement}}">
+                                                {{$abonnement->nom_abonnement}}
+                                            </option>
+                                        @endforeach
+                                    </select>
                                 </div>
+                                <div class="col-lg-12">
+                                    <label for="mobile">Fonction</label>
+                                    <select name="fonction" class="form-control">
+                                        <option value="cli"> client</option>
+                                        <option value="coa"> coach</option>
+
+                                    </select>
+                                </div>
+                                <div class="col-lg-6">
+                                    <label for="last-name">Age</label>
+                                    <input type="text" id="lastname" name="age">
+                                </div>
+                                <div class="col-lg-6">
+                                    <label for="last-name">Sexe</label>
+                                    <input type="text" id="lastname" name="sexe">
+                                </div>
+                                <div class="col-lg-6">
+                                    <label for="last-name">Adresse</label>
+                                    <input type="text" id="lastname" name="adresse">
+                                </div>
+
+
+                                <div class="col-lg-6">
+                                    <label for="mobile">Password</label>
+                                    <input type="password" id="mobile" name="pwd">
+                                </div>
+                                <div class="col-lg-6">
+                                    <label for="mobile">Password confirm</label>
+                                    <input type="password" id="mobile" name="pwdconf">
+                                </div>
+
                             </div>
                             <button type="submit" class="register-btn">Get Started</button>
                         </form>
